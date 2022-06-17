@@ -1,0 +1,9 @@
+@import url("style2.css");
+p{
+    color: white;
+    background-color: red;
+}
+h3{
+    background-color: black;
+    color: yellow;
+}

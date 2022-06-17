@@ -1,0 +1,6 @@
+ol li:nth-child(even){
+    background-color:indigo;
+}
+li:hover:not(.from){
+    font-size: 30px;
+}

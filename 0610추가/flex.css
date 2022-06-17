@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    background-color: skyblue;
+    flex-wrap: wrap;
+    height: 60px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.item{
+    flex-basis: 200px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20px;
+    flex-grow: 1;
+}
+.item:hover{
+    background-color: blue;
+}
+.logo{
+    background-image: url();
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
