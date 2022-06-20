@@ -10,18 +10,26 @@
             width: 400px;
             height: 200px;
             background-color: skyblue;
-            border: 1px solid;
         }
         .child{
             background-color: orange;
             width: inherit;
             height: inherit;
-            border: 1px solid;
+        }
+        #parent_bob{
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
         }
     </style>
 </head>
 <body>
-    <div class="parent">부모
+    <div class="parent" id="parent_bob">부모
         <div class="child">자식</div>
     </div>
 </body>
