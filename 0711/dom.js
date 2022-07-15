@@ -9,7 +9,6 @@ boxEl.addEventListener("click",function() {
     }
     else{
         boxEl.classList.add("orange")
-
     }
     
 })
