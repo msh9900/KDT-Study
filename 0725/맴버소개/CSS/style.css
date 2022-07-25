@@ -1,0 +1,178 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+/* font-family: 'Orbitron', sans-serif; */
+
+/* RESET */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* COMMON */
+.member_1{
+    background-color: rgba(77, 227, 241, 0.4);
+}
+.member_2{
+    background-color: rgba(245, 241, 4, 0.4);
+}
+.member_3{
+    background-color: rgba(248, 9, 180, 0.4);
+}
+
+/* WRAP */
+.wrap{
+    width: 340px;
+    padding: 30px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+
+}
+.wrap .menu::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.wrap .menu a{
+    font-size: 20px;
+    color: #666;
+}
+.wrap .menu a:first-child{
+    float: left;
+}
+.wrap .menu a:last-child{
+    float: right;
+}
+/* PROFILE */
+.wrap .profile{
+    width: 100%;
+    text-align: center;
+
+}
+.wrap .profile img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 5px 15px 30px rgba(11, 111, 120, 0.6);
+}
+.wrap .profile h1{
+    font: bold 22px/1 "Orbitron";
+    color: #555;
+    margin: 20px 0px 10px 0px;
+    
+}
+.wrap .profile p{
+    font: bold 14px/1 "Orbitron";
+    color: #999;
+    
+}
+.member_1 .wrap .profile .btnView{
+    display: block;
+    width: 180px;
+    height: 32px;
+    margin: 20px auto 20px;
+    background: linear-gradient(45deg, rgb(35, 255, 251), rgb(18, 229, 184));
+    font: bold 15px/32px "Orbitron";
+    color: white;
+    border-radius: 16px;
+    box-shadow: 5px 10px 20px rgba(8, 159, 235,0.4);
+    text-shadow: 0px 0px 5px rgb(255, 255, 255,0.6);
+    letter-spacing: 1px; 
+}
+.member_2 .wrap .profile .btnView{
+    display: block;
+    width: 180px;
+    height: 32px;
+    margin: 20px auto 20px;
+    background: linear-gradient(45deg, rgb(240, 212, 6), rgb(243, 60, 5));
+    font: bold 15px/32px "Orbitron";
+    color: white;
+    border-radius: 16px;
+    box-shadow: 5px 10px 20px rgba(8, 159, 235,0.4);
+    text-shadow: 0px 0px 5px rgb(255, 255, 255,0.6);
+    letter-spacing: 1px; 
+}
+.member_3 .wrap .profile .btnView{
+    display: block;
+    width: 180px;
+    height: 32px;
+    margin: 20px auto 20px;
+    background: linear-gradient(45deg, rgb(243, 8, 192), rgb(235, 5, 59));
+    font: bold 15px/32px "Orbitron";
+    color: white;
+    border-radius: 16px;
+    box-shadow: 5px 10px 20px rgba(8, 159, 235,0.4);
+    text-shadow: 0px 0px 5px rgb(255, 255, 255,0.6);
+    letter-spacing: 1px; 
+}
+/* CONTACT */
+.wrap .contact {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.wrap .contact li {
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #eee;
+}
+.wrap .contact li:last-child {
+    border-bottom: none;
+}
+.wrap .contact li a {
+    color: #555;
+}
+
+.wrap .contact li i {
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px #ddd;
+}
+.wrap .contact li span {
+    font: 13px/1 "Orbitron";
+    letter-spacing: 1px;
+}
+/* OTHERS */
+.wrap .others{
+    text-align: center;
+    font-size: 0px;
+}
+.wrap .others a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0px 10px;
+    opacity: 0.4;
+}
+.wrap .others a.on{
+    opacity: 1;
+}
+
+.wrap .others a:nth-of-type(1) {
+     background-color: rgb(13, 208, 252);
+     box-shadow: 5px 5px 10px rgb(255, 165, 0, 0.5);
+}
+.wrap .others a:nth-of-type(2) {
+     background-color: rgb(243, 193, 13);
+     box-shadow: 5px 5px 10px rgb(0, 183, 255, 0.5);
+}
+.wrap .others a:nth-of-type(3) {
+     background-color: hotpink;
+     box-shadow: 5px 5px 10px rgba(255, 105, 180, 0.5);
+}
