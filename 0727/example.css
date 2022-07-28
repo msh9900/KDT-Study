@@ -1,0 +1,50 @@
+* {
+    margin:  0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* COMMON */
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #b1e1e2;
+}
+section{
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    transform-origin: center 600px;
+    animation: circle1 linear 10s infinite;
+}
+@keyframes circle1 {
+    0% {
+        left:0%;
+        top: 0%;
+    }
+    25%{
+        left: 90%;
+        top: 0%;
+    }
+    50%{
+        left: 90%;
+        top: 82%
+
+    }
+    100%{
+        left: 0%;
+        top: 82%;
+
+    }
+}

@@ -1,0 +1,181 @@
+/* RESET */
+* {
+    margin:  0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* COMMON */
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #b1e1e2;
+    animation: sky linear 10s infinite;
+}
+section{
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid orange;
+
+}
+section .sky{
+    border: 1px solid orange;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+section .sky .sun{
+    width: 180px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -90px;
+    top: -130px;
+    transform-origin: center 600px;
+    animation: sun linear 10s infinite;
+}
+section .sky .moon{
+    width: 160px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -80px;
+    top: -130px;
+    transform-origin: center 600px;
+    animation: moon linear 10s infinite;
+}
+section .sky .cloud_1{
+    position: absolute;
+    width: 160px;
+    left: 0%;
+    top:-30px;
+    animation: cloud_1 linear 10s infinite;
+}
+section .sky .cloud_2{
+    position: absolute;
+    width: 90px;
+    left: 12%;
+    top:20px;
+    animation: cloud_1 linear 7s infinite;
+}
+section .city{
+    position: absolute;
+
+}
+section .city .city_img{
+    position: absolute;
+    bottom: 0px;
+    width: 1000px;
+    
+}
+/* Keyframes */
+@keyframes sun {
+    0% {
+        transform: rotate(-90deg);
+        opacity: 0;
+
+    }
+    25%{
+        transform: rotate(0deg);
+        opacity: 1;
+
+    }
+    50%{
+        transform: rotate(90deg);
+        opacity: 0;
+
+    }
+    75%{
+        transform: rotate(180deg);
+        opacity: 0;
+
+    }
+    100%{
+        transform: rotate(270deg);
+        opacity: 0;
+
+    }
+}
+@keyframes moon {
+    0% {
+        transform: rotate(90deg);
+        opacity: 0;
+
+    }
+    25%{
+        transform: rotate(90deg);
+        opacity: 0;
+
+    }
+    50%{
+        transform: rotate(90deg);
+        opacity: 0;
+
+    }
+    75%{
+        transform: rotate(0deg);
+        opacity: 1;
+
+    }
+    100%{
+        transform: rotate(-90deg);
+        opacity: 0;
+
+    }
+}
+@keyframes cloud_1 {
+    0% {
+        left:0%;
+
+    }
+    50%{
+        left: 100%;
+
+    }
+    100%{
+        left: 0%;
+
+    }
+}
+@keyframes cloud_2 {
+    0% {
+        left:12%;
+
+    }
+    50%{
+        left: 112%;
+
+    }
+    100%{
+        left: 12%;
+
+    }
+}
+@keyframes sky {
+    0% {
+        background-color: #636888;
+
+    }
+    25%{
+        background-color: #b1e1e2;
+
+
+    }
+    50%{
+        background-color: #fcd2e2;
+
+
+    }
+    75%{
+        background-color: #675577;
+
+    }
+    100%{
+        background-color: #636888;
+
+    }
+}
