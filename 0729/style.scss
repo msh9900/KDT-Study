@@ -1,0 +1,119 @@
+@import "reset";
+@mixin btn($width: 150px, $bgColor, $fontColor: gray) {
+    display: block;
+    width: $width;
+    height: 30px;
+    border-radius: 15px;
+    background-color: $bgColor;
+    color: $fontColor;
+    text-align: center;
+    font: bold 16px/30px "arial";
+    margin-top: 20px;
+   }
+// COLOR SET
+
+
+// wrap
+$bodyBgColor: #eee;
+$itemBgColor: #000;
+$itemHoverBgColor: orange;
+$boxShadow:5px 5px 20px rgba(0, 0, 0, 0.1);
+
+//animation
+$interval: 0.3s;
+
+/* COMMON */
+body{
+    background-color: $bodyBgColor;
+    
+    .wrap {
+        width: 100%;
+        border-bottom: 2px solid #ddd;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+
+        perspective:  600px;
+        &:hover{
+            .item{
+                transform: translate(0px, 0px) rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        .item {
+            width: 300px;
+            padding: 30px;
+            background-color: $itemBgColor;
+            margin: 50px;
+            border-radius: 10px;
+            box-shadow: $boxShadow;
+
+            transform: translate(0px, 100px) rotateY(180deg);
+            transition: 0.4s;
+            opacity: 0;
+
+            h2 {
+                font:  bold 30px/1 "arial";
+                margin-bottom: 20px;
+                @if $itemBgColor == #fff {
+                    color: #333;
+                }
+                @else{
+                    color: #fff;
+                }
+            }
+
+            p {
+                font: normal 16px/1.5 "arial";
+                @if $itemBgColor == #fff {
+                    color: #777;
+                }
+                @else{
+                    color: #ccc;
+                }
+            }
+
+            a {
+                @include btn(150px,gray,white);
+            }
+            $bgColors:(orange,hotpink,aqua,lightgreen);
+            
+            
+            @each $el in $bgColors{
+                $index: index($bgColors , $el );
+                &:nth-of-type(#{$index}){
+                    transition-delay: $interval * $index;
+                    // h2{
+                    //     color: $el;
+                    // }
+                    // p{
+                    //     color: $el;
+                    // }
+                    a{
+                        @include btn($bgColor: $el);
+                    }
+                }
+            }
+
+            @for $i from 1 to 5 {
+                 &:nth-of-type(#{$i}) {
+                  transition-delay: $interval * $i;
+                 }
+                 }
+            // &:nth-of-type(1){
+            //     transition: .1s;
+            // }
+            // &:nth-of-type(2){
+            //     transition: .2s;
+            // }
+            // &:nth-of-type(3){
+            //     transition: .3s;
+            // }
+            // &:nth-of-type(4){
+            //     transition: .4s;
+            // }
+        }
+
+    }
+}
