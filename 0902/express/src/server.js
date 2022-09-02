@@ -24,12 +24,16 @@ userRouter.get('/:id', (req, res) => {
 });
 
 userRouter.post('/', (req, res) => {
-  res.end('회원 등록');
-});
-
-app.use('/users', userRouter);
-app.use('/', (req, res) => {
-  res.end('Hello, express world!');
+  if (req.query.id && req.query.name) {
+    const newUser = {
+      id: req.query.id,
+      name: req.query.name,
+    };
+    USER[Object.keys(USER).length + 1] = newUser;
+    res.send('회원 등록 완료');
+  } else {
+    res.end('Unexpected query');
+  }
 });
 
 app.listen(PORT, () => {
