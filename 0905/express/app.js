@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const userRouter = require('./routes/users');
-const postsRouter = express.Router();
+const postsRouter = require('./routes/posts');
 
 const PORT = 4000;
 
