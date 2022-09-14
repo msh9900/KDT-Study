@@ -26,9 +26,8 @@ async function main() {
   ]);
   const data = users.find({});
   const arr = await data.toArray();
-  console.log(data);
   console.log(arr);
-
+  
   await client.close();
 }
 
