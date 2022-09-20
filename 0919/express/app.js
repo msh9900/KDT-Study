@@ -7,9 +7,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 //passport --> 세션을 반드시 사용을 해야함.
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-
-const mongoClient = require('./routes/mongo');
+require('dotenv').config();
 
 const router = require('./routes/index');
 const userRouter = require('./routes/users');
@@ -17,15 +15,17 @@ const postsRouter = require('./routes/posts');
 const boardRouter = require('./routes/board');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const passportRouter = require('./routes/passport');
 
-const PORT = 4000;
+passportRouter();
+const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('mos'));
 app.use(
   session({
     secret: 'mos',
@@ -40,48 +40,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(
-  new LocalStrategy(
-    {
-      usernameField: 'id',
-      passwordField: 'password',
-    },
-    async (id, password, cb) => {
-      const client = await mongoClient.connect();
-      const userCursor = client.db('kdt1').collection('users');
-      const idResult = await userCursor.findOne({ id });
-      console.log(id);
-      console.log(password);
-
-      if (idResult) {
-        if (idResult.password === password) {
-          cb(null, idResult);
-        } else {
-          cb(null, false, { message: '비밀번호가 가 없습니다.' });
-        }
-      } else {
-        cb(null, false, { message: '해당 id 가 없습니다.' });
-      }
-    }
-  )
-);
-passport.serializeUser((user, cb) => {
-  cb(null, user.id);
-});
-
-passport.deserializeUser(async (id, cb) => {
-  const client = await mongoClient.connect();
-  const userCursor = client.db('kdt1').collection('users');
-  const result = await userCursor.findOne({ id });
-  if (result) cb(null, result);
-});
-
 app.use('/', router);
 app.use('/users', userRouter);
 app.use('/posts', postsRouter);
 app.use('/board', boardRouter);
 app.use('/register', registerRouter);
-app.use('/login', loginRouter);
+app.use('/login', loginRouter.router);
 
 app.use(express.static('public'));
 
