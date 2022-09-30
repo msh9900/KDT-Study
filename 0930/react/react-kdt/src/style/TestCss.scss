@@ -1,0 +1,12 @@
+div.component-root {
+    background-color: skyblue;
+    & > h1 {
+      color: dodgerblue;
+    }
+    
+    & > span {
+      background-color: pink;
+      font-weight: 700;
+    }
+  }
+  
